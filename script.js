@@ -211,17 +211,16 @@ if (modalCertificado) {
     ".certificado-modal__fechar"
   );
 
-  
 
-document.querySelectorAll(".certificado__imagem, .resultados__galeria img, .estudio__galeria img").forEach(imagem => {
-
-
-    imagem.addEventListener("click", () => {
-      imagemAmpliada.src = imagem.src;
-      imagemAmpliada.alt = imagem.alt;
-      modalCertificado.classList.add("ativo");
-    });
+document.querySelectorAll(
+  ".certificado__imagem, .certificado-card img, .resultados__galeria img, .estudio__galeria img"
+).forEach(imagem => {
+  imagem.addEventListener("click", () => {
+    imagemAmpliada.src = imagem.src;
+    imagemAmpliada.alt = imagem.alt;
+    modalCertificado.classList.add("ativo");
   });
+});
 
   function fecharCertificado() {
     modalCertificado.classList.remove("ativo");
@@ -244,4 +243,82 @@ document.querySelectorAll(".certificado__imagem, .resultados__galeria img, .estu
 }
 
 
+/* ===== BORBOLETA MÁGICA COM RASTRO DOURADO ===== */
 
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector("#borboleta-magica");
+  if (!container) return;
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  const borboleta = container.querySelector(".borboleta-desenho");
+  const linha = container.querySelector(".rastro-linha");
+  const luz = container.querySelector(".rastro-luz");
+  const caminho = linha;
+
+  if (!borboleta || !linha || !luz) return;
+
+  const duracao = 7000;
+  const comprimento = caminho.getTotalLength();
+  const inicio = performance.now();
+
+  // Tamanho da cauda luminosa em relação ao caminho
+  const tamanhoRastro = comprimento * 0.22;
+
+  // Mantém o caminho escondido inicialmente
+  [linha, luz].forEach(elemento => {
+    elemento.style.strokeDasharray = `0 ${comprimento + 10}`;
+    elemento.style.opacity = "0";
+  });
+
+  function animar(agora) {
+    const progresso = Math.min((agora - inicio) / duracao, 1);
+    const distancia = progresso * comprimento;
+
+    // Posição da borboleta sobre a curva
+    const ponto = caminho.getPointAtLength(distancia);
+
+    // Converte coordenadas do SVG para a tela
+    const svg = caminho.ownerSVGElement;
+    const matriz = svg.getScreenCTM();
+
+    if (!matriz) return;
+
+    const posicao = new DOMPoint(ponto.x, ponto.y).matrixTransform(matriz);
+    const area = container.getBoundingClientRect();
+
+    borboleta.style.left = `${posicao.x - area.left}px`;
+    borboleta.style.top = `${posicao.y - area.top}px`;
+
+    // Rastro cresce atrás da borboleta e
+    // o início desaparece progressivamente
+    const inicioRastro = Math.max(0, distancia - tamanhoRastro);
+    const trechoVisivel = distancia - inicioRastro;
+
+    [linha, luz].forEach((elemento, indice) => {
+      elemento.style.strokeDasharray =
+        `0 ${inicioRastro} ${trechoVisivel} ${comprimento + 10}`;
+
+      elemento.style.opacity =
+        progresso > 0.92
+          ? String((1 - progresso) / 0.08 * (indice === 0 ? 0.55 : 0.3))
+          : String(indice === 0 ? 0.55 : 0.3);
+    });
+
+    // Entrada e saída suave da borboleta
+    borboleta.style.opacity =
+      String(Math.min(1, progresso * 12, (1 - progresso) * 12));
+
+    if (progresso < 1) {
+      requestAnimationFrame(animar);
+    } else {
+      borboleta.style.opacity = "0";
+      linha.style.opacity = "0";
+      luz.style.opacity = "0";
+    }
+  }
+
+  requestAnimationFrame(animar);
+});

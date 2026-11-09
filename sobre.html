@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sobre a Débora | Débora Leandra Estética</title>
+  <meta name="description" content="Conheça Débora Leandra, profissional de estética em Ribeirão das Neves (MG). Realçando sua beleza, valorizando sua essência.">
+
+<script>document.documentElement.classList.add('js');</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Link para quem navega pelo teclado ir direto ao conteúdo -->
+  <a class="pular-conteudo" href="#conteudo-principal">Pular para o conteúdo</a>
+
+  <!-- ==================== CABEÇALHO ==================== -->
+  <header class="cabecalho">
+
+    <!-- Ícone de casinha: volta para a página inicial -->
+    <a class="cabecalho__casa" href="index.html" aria-label="Voltar à página inicial">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+           aria-hidden="true" focusable="false">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </a>
+
+    <!-- A logo oficial entra aqui quando adicionarmos as imagens -->
+    <p class="cabecalho__marca">Débora Leandra Estética</p>
+
+    <!-- Botão do menu -->
+    <button class="cabecalho__menu-botao" type="button"
+            aria-expanded="false" aria-controls="menu-principal">
+      Menu
+    </button>
+
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+      <ul class="menu__lista" role="list">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="certificados.html">Certificados</a></li>
+        <li><a href="resultados.html">Resultados</a></li>
+        <li><a href="estudio.html">Estúdio</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
+  <main id="conteudo-principal">
+
+    <!-- ---------- 1. APRESENTAÇÃO ---------- -->
+    <section class="sobre sobre-apresentacao" id="sobre" aria-labelledby="titulo-sobre">
+
+      <div class="sobre-apresentacao__foto">
+        <div class="moldura-arco">
+          <img src="imagens/principal foto.jpeg"
+               alt="Débora Leandra, profissional de estética"
+               width="853" height="1280">
+        </div>
+      </div>
+
+      <div class="sobre-apresentacao__texto">
+        <h1 id="titulo-sobre">Conheça Débora Leandra</h1>
+
+        <p>
+          Acredito que cuidar da beleza é também uma forma de valorizar a autoestima e o bem-estar.
+        </p>
+
+        <p>
+          Na Débora Leandra Estética, cada atendimento é pensado para proporcionar um momento especial de cuidado, atenção e acolhimento, respeitando a beleza e a individualidade de cada pessoa.
+        </p>
+
+        <p class="sobre-assinatura">
+          Débora Leandra — Realçando sua beleza, valorizando sua essência.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ---------- 2. FILOSOFIA DE ATENDIMENTO ---------- -->
+    <section class="filosofia" aria-labelledby="titulo-filosofia">
+      <h2 id="titulo-filosofia">Filosofia de atendimento</h2>
+
+      <p class="filosofia__proposito">
+        Mais do que realçar a beleza, meu propósito é fazer com que você se sinta bem, confiante e valorizada.
+      </p>
+
+      <ul class="filosofia__lista" role="list">
+        <li class="valor">
+          <h3>Cuidado</h3>
+          <p>Cada atendimento é pensado para proporcionar um momento especial de cuidado e atenção.</p>
+        </li>
+        <li class="valor">
+          <h3>Autoestima</h3>
+          <p>Cuidar da beleza é também uma forma de valorizar a autoestima e o bem-estar.</p>
+        </li>
+        <li class="valor">
+          <h3>Acolhimento</h3>
+          <p>Um atendimento com acolhimento, para que você se sinta bem, confiante e valorizada.</p>
+        </li>
+        <li class="valor">
+          <h3>Individualidade</h3>
+          <p>Respeito à beleza e à individualidade de cada pessoa.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ---------- 3. QUALIFICAÇÕES ---------- -->
+    <section class="qualificacoes" aria-labelledby="titulo-qualificacoes">
+      <h2 id="titulo-qualificacoes">Qualificações</h2>
+
+      <p class="sobre-texto">
+        Formações e certificados em diversas áreas da estética, reunidos em uma página própria.
+      </p>
+
+      <ul class="qualificacoes__lista" role="list" aria-label="Áreas das formações">
+        <li>Estética Facial</li>
+        <li>Design de Sobrancelhas</li>
+        <li>Microblading Labial</li>
+        <li>Micropigmentação Labial</li>
+        <li>Reconstrução de Sobrancelhas</li>
+        <li>Brow Lamination</li>
+        <li>Gerenciamento de Pele</li>
+        <li>Microagulhamento Capilar</li>
+        <li>Especialista em Microagulhamento</li>
+        <li>Depilação a Laser</li>
+      </ul>
+
+      <a class="botao" href="certificados.html">Conheça minhas formações</a>
+    </section>
+
+    <!-- ---------- 4. CONVITE FINAL ---------- -->
+    <section class="convite" aria-labelledby="titulo-convite">
+      <div class="convite__painel">
+        <h2 id="titulo-convite">Venha conhecer o estúdio</h2>
+
+        <p>
+          Conheça o ambiente onde cada atendimento acontece, em Ribeirão das Neves – MG.
+        </p>
+
+        <div class="convite__acoes">
+          <a class="botao"
+             href="https://wa.me/5531995594694?text=Ol%C3%A1%2C%20D%C3%A9bora!%20Tudo%20bem%3F%20Conheci%20seu%20trabalho%20pelo%20site%20e%20gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20para%20saber%20qual%20procedimento%20%C3%A9%20mais%20indicado%20para%20mim.%20Poderia%20me%20explicar%20como%20funciona%3F"
+             target="_blank"
+             rel="noopener noreferrer">
+            Solicitar Avaliação
+          </a>
+
+          <a class="botao botao--secundario" href="estudio.html">
+            Conhecer o estúdio
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== RODAPÉ ==================== -->
+  <footer class="rodape">
+    <p>&copy; 2026 Débora Leandra Estética. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Borboleta dourada com rastro luminoso -->
+<div id="borboleta-magica" aria-hidden="true">
+  <svg
+    class="rastro-magico"
+    viewBox="0 0 1000 600"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <filter id="brilho-dourado">
+        <feGaussianBlur stdDeviation="3" />
+      </filter>
+    </defs>
+
+    <!-- Brilho suave por trás do rastro -->
+    <path
+      class="rastro-luz"
+      d="M 30 520
+         C 160 300, 220 500, 350 430
+         S 530 280, 650 310
+         S 800 240, 950 90"
+    />
+
+    <!-- Linha dourada principal -->
+    <path
+      class="rastro-linha"
+      d="M 30 520
+         C 160 300, 220 500, 350 430
+         S 530 280, 650 310
+         S 800 240, 950 90"
+    />
+  </svg>
+  
+<!-- Borboleta minimalista dourada -->
+
+<!-- Borboletinha dourada vista de lado -->
+<svg
+  class="borboleta-desenho"
+  viewBox="0 0 100 100"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g
+    fill="none"
+    stroke="#d4b66b"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <!-- Asa superior -->
+    <path d="M54 52 C30 40 18 12 36 13 C55 14 65 35 54 52 Z"/>
+
+    <!-- Detalhes da asa superior -->
+    <path d="M54 52 Q35 28 35 17"/>
+    <path d="M54 52 Q43 34 28 30"/>
+
+    <!-- Asa inferior -->
+    <path d="M54 52 C30 48 23 70 40 80 C54 83 59 64 54 52 Z"/>
+
+    <!-- Detalhe da asa inferior -->
+    <path d="M54 52 Q37 64 40 76"/>
+
+    <!-- Corpo -->
+    <path d="M53 48 Q65 51 76 60"/>
+
+    <!-- Cabeça -->
+    <circle cx="77" cy="60" r="3"/>
+
+    <!-- Antenas -->
+    <path d="M78 57 Q83 46 89 46"/>
+    <path d="M76 57 Q77 45 82 42"/>
+  </g>
+</svg>
+
+</div>
+
+</body>
+</html>
